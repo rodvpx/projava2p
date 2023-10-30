@@ -1,0 +1,3 @@
+para adicionar arquivo: fit add .
+para comitar(subir alteração): git commit -m "feat: nome da alteração"
+para subir a alteração: git push

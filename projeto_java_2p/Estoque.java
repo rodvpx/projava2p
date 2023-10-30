@@ -73,8 +73,11 @@ public class Estoque {
     }
 
     public static double margemLucro(double custo, double venda) {
-        double faturamento = custo + venda;
-        double lucro = (venda - custo) / faturamento;
-        return lucro;
+        if (venda == 0) {
+            return 0; // Evita divisão por zero
+        }
+        
+        double margem = ((venda - custo) / venda) * 100;
+        return margem;
     }
 }

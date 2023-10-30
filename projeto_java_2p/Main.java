@@ -3,21 +3,34 @@ package projeto_java_2p;
 import javax.swing.JOptionPane;
 
 public class Main {
-    sabado
+    
     public static void main(String[] args) {
-        String menu[] = {"Estoque", "Venda", "Relatorios"};
-        int option = -1; // Inicialize a opção com um valor inválido
+        int option; // Inicialize a opção com um valor inválido
 
         do {
             // Exibir o menu e permitir ao usuário escolher uma opção
-            String input = JOptionPane.showInputDialog("Escolha uma opção:\n" + "1. Estoque\n" + "2. Venda\n" + "3. Relatorios\n" + "0. Sair");
+            String input = (String) JOptionPane.showInputDialog(null, 
+            "Escolha uma opção:\n1. Estoque\n2. Venda\n3. Relatorios\n0. Sair", "Menu", JOptionPane.PLAIN_MESSAGE);
 
-            // Converter a entrada para um número inteiro
-            option = Integer.parseInt(input);
+            if (input == null) {
+                option = 0; // Usuário clicou em Cancelar ou fechou a janela
+            } else {
+                try {
+                    // Converter a entrada para um número inteiro
+                    option = Integer.parseInt(input);
+                } catch (NumberFormatException e) {
+                    option = -1; // Tratamento de entrada inválida
+                }
+            }
 
             switch (option) {
                 case 1:
+                    Estoque.verEstoque();
+
+                    String cadastrarOpcao = JOptionPane.showInputDialog("Deseja cadastrar um novo produto? (s/n)");
+                    if (cadastrarOpcao != null && cadastrarOpcao.equalsIgnoreCase("S")) {
                     Estoque.cadastroProduto();
+                }
                     break;
                 case 2:
                     // Implemente a lógica para a opção de venda
