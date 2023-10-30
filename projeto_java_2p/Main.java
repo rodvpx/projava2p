@@ -3,7 +3,7 @@ package projeto_java_2p;
 import javax.swing.JOptionPane;
 
 public class Main {
-    
+    sabado
     public static void main(String[] args) {
         String menu[] = {"Estoque", "Venda", "Relatorios"};
         int option = -1; // Inicialize a opção com um valor inválido
