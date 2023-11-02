@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 public class BancoDados {
 
     public static void lancamento() {
-
         String input = JOptionPane.showInputDialog(
                 "Informe o produto para Cadastro: (separado por , )\n- Codigo | Nome | Raça | Variação | Quantidade Comida kg | Valor Kg | Produção de Leite L | Valor L");
 
@@ -62,12 +61,8 @@ public class BancoDados {
                 JOptionPane.showConfirmDialog(null, "A entrada não foi dividida corretamente em 8 partes.");
             }
         } else {
-            // Trate o caso em que input é nulo, por exemplo, mostrando uma mensagem de
-            // erro.
             JOptionPane.showMessageDialog(null, "Entrada nula. Por favor, forneça uma entrada válida.");
         }
-
-    }
 
     public static void verDados() {
         StringBuilder mensagem = new StringBuilder();
