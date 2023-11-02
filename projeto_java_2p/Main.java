@@ -10,7 +10,7 @@ public class Main {
         do {
             // Exibir o menu e permitir ao usuário escolher uma opção
             String input = (String) JOptionPane.showInputDialog(null, 
-            "Escolha uma opção:\n1. Estoque\n2. Venda\n3. Relatorios\n0. Sair", "Menu", JOptionPane.PLAIN_MESSAGE);
+            "Escolha uma opção:\n1. Banco De Dados\n2. Lançamentos\n3. Relatorios\n0. Sair", "Menu", JOptionPane.PLAIN_MESSAGE);
 
             if (input == null) {
                 option = 0; // Usuário clicou em Cancelar ou fechou a janela
@@ -24,22 +24,24 @@ public class Main {
             }
 
             switch (option) {
+                case 0:
+                    JOptionPane.showMessageDialog(null, "Saindo do programa.");
+                    break;
                 case 1:
-                    Estoque.verEstoque();
+                    BancoDados.verDados();
 
-                    String cadastrarOpcao = JOptionPane.showInputDialog("Deseja cadastrar um novo produto? (s/n)");
+                    String cadastrarOpcao = JOptionPane.showInputDialog("Deseja cadastrar uma nova vaca? (s/n)");
                     if (cadastrarOpcao != null && cadastrarOpcao.equalsIgnoreCase("S")) {
-                    Estoque.cadastroProduto();
+                    BancoDados.lancamento();
                 }
                     break;
                 case 2:
-                    // Implemente a lógica para a opção de venda
+                    BancoDados.lancamento();
+                    
+                    
                     break;
                 case 3:
                     // Implemente a lógica para a opção de relatórios
-                    break;
-                case 0:
-                    System.out.println("Saindo do programa.");
                     break;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
