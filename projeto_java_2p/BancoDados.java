@@ -7,14 +7,13 @@ public class BancoDados {
     public static void lancamento() {
         String input = JOptionPane.showInputDialog(
                 "Informe o produto para Cadastro: (separado por , )\n- Codigo | Nome | Raça | Variação | Quantidade Comida kg | Valor Kg | Produção de Leite L | Valor L");
-
-        if (input != null) { // Verifique se input não é nulo
-            String div[] = input.split(",");
-
+    
+        if (input != null) {
+            String[] div = input.split(",");
             if (div.length == 8) {
                 if (VarShare.id >= VarShare.cod.length) {
                     // Crie novos arrays com tamanhos maiores
-                    int newMaxProdutos = VarShare.cod.length * 2; // Dobre o tamanho
+                    int newMaxProdutos = VarShare.cod.length * 2;
                     int[] newCod = new int[newMaxProdutos];
                     String[] newNome = new String[newMaxProdutos];
                     String[] newRaca = new String[newMaxProdutos];
@@ -47,22 +46,28 @@ public class BancoDados {
                 }
 
                 int i = (int) (VarShare.id - 1);
-                VarShare.cod[i] = Integer.parseInt(div[0]);
+                try {
+                    VarShare.cod[i] = Integer.parseInt(div[0]);
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Erro: Código não é um número válido.");
+                    return;
+                }
                 VarShare.nome[i] = div[1];
                 VarShare.raca[i] = div[2];
                 VarShare.variacao[i] = div[3];
-                VarShare.comidakg[i] = Integer.parseInt(div[3]);
-                VarShare.custoComida[i] = Double.parseDouble(div[4]);
-                VarShare.leite[i] = Double.parseDouble(div[5]);
-                VarShare.valorVenda[i] = Double.parseDouble(div[6]);
+                VarShare.comidakg[i] = Double.parseDouble(div[4]);
+                VarShare.custoComida[i] = Double.parseDouble(div[5]);
+                VarShare.leite[i] = Double.parseDouble(div[6]);
+                VarShare.valorVenda[i] = Double.parseDouble(div[7]);
                 VarShare.id++;
 
             } else {
-                JOptionPane.showConfirmDialog(null, "A entrada não foi dividida corretamente em 8 partes.");
+                JOptionPane.showMessageDialog(null, "A entrada não foi dividida corretamente em 8 partes.");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Entrada nula. Por favor, forneça uma entrada válida.");
         }
+    }
 
     public static void verDados() {
         StringBuilder mensagem = new StringBuilder();

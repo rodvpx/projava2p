@@ -5,48 +5,48 @@ import javax.swing.JOptionPane;
 public class Main {
     
     public static void main(String[] args) {
-        int option; // Inicialize a opção com um valor inválido
+    int option; // Inicialize a opção com um valor inválido
 
-        do {
-            // Exibir o menu e permitir ao usuário escolher uma opção
-            String input = (String) JOptionPane.showInputDialog(null, 
-            "Escolha uma opção:\n1. Banco De Dados\n2. Lançamentos\n3. Relatorios\n0. Sair", "Menu", JOptionPane.PLAIN_MESSAGE);
+    do {
+        // Exibir o menu e permitir ao usuário escolher uma opção
+        String input = JOptionPane.showInputDialog(null,
+                "Escolha uma opção:\n1. Banco De Dados\n2. Lançamentos\n3. Relatorios\n0. Sair", "Menu",
+                JOptionPane.PLAIN_MESSAGE);
 
-            if (input == null) {
-                option = 0; // Usuário clicou em Cancelar ou fechou a janela
-            } else {
-                try {
-                    // Converter a entrada para um número inteiro
-                    option = Integer.parseInt(input);
-                } catch (NumberFormatException e) {
-                    option = -1; // Tratamento de entrada inválida
-                }
+        if (input == null) {
+            option = 0; // Usuário clicou em Cancelar ou fechou a janela
+        } else {
+            try {
+                // Converter a entrada para um número inteiro
+                option = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                option = -1; // Tratamento de entrada inválida
             }
+        }
 
-            switch (option) {
-                case 0:
-                    JOptionPane.showMessageDialog(null, "Saindo do programa.");
-                    break;
-                case 1:
-                    BancoDados.verDados();
+        switch (option) {
+            case 0:
+                JOptionPane.showMessageDialog(null, "Saindo do programa.");
+                break;
+            case 1:
+                BancoDados.verDados();
 
-                    String cadastrarOpcao = JOptionPane.showInputDialog("Deseja cadastrar uma nova vaca? (s/n)");
-                    if (cadastrarOpcao != null && cadastrarOpcao.equalsIgnoreCase("S")) {
+                String cadastrarOpcao = JOptionPane.showInputDialog("Deseja cadastrar uma nova vaca? (s/n)");
+                if (cadastrarOpcao != null && cadastrarOpcao.equalsIgnoreCase("S")) {
                     BancoDados.lancamento();
                 }
-                    break;
-                case 2:
-                    BancoDados.lancamento();
-                    
-                    
-                    break;
-                case 3:
-                    // Implemente a lógica para a opção de relatórios
-                    break;
-                default:
-                    System.out.println("Opção inválida. Tente novamente.");
-                    break;
-            }
-        } while (option != 0);
-    }
+                break;
+            case 2:
+                BancoDados.lancamento();
+                break;
+            case 3:
+                // Implemente a lógica para a opção de relatórios
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Opção inválida. Tente novamente.");
+                break;
+        }
+    } while (option != 0);
+}
+
 }
