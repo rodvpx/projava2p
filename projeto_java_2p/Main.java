@@ -10,7 +10,7 @@ public class Main {
     do {
         // Exibir o menu e permitir ao usuário escolher uma opção
         String input = JOptionPane.showInputDialog(null,
-                "Escolha uma opção:\n1. Banco De Dados\n2. Lançamentos\n3. Relatorios\n0. Sair", "Menu",
+                "+-----------------------------------+\n| GERENCIADOR DE CURRAL |\n+-----------------------------------+\nEscolha uma opção:\n\n1. Banco De Dados\n2. Lançamentos\n3. Relatorios\n0. Sair", "Menu",
                 JOptionPane.PLAIN_MESSAGE);
 
         if (input == null) {
@@ -45,6 +45,7 @@ public class Main {
             default:
                 JOptionPane.showMessageDialog(null, "Opção inválida. Tente novamente.");
                 break;
+                // 04112023,6789,Mimosa,Holandese,Marrom,8.0,5.69,3.500,2.69
         }
     } while (option != 0);
 }

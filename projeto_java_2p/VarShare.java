@@ -5,6 +5,7 @@ public class VarShare {
     tive que instanciar as variaveis em um arquivo separado para poder puxar elas nos arquivos */
     public static long id = 1;
     public static int maxProdutos = 1;
+    public static int[] data = new int[maxProdutos];
     public static int[] cod = new int[maxProdutos];
     public static String[] nome = new String[maxProdutos];
     public static String[] raca = new String[maxProdutos];
