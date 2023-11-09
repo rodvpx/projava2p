@@ -1,0 +1,11 @@
+Data: 09112023
+Código: 5554
+Nome: Marli
+Raça: Holandes
+Variação: Marrom
+Lançamento:
+Data: 11112023
+Comida Kg: 8
+Valor R$: 3
+Leite ml: 5
+Venda do Leite R$: 2.69
