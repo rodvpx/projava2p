@@ -12,11 +12,11 @@ public class Estatisticas {
     // Caminho do diretório de armazenamento
     private static final String REPOSITORY_PATH = "repository";
 
-    // Método para exibir os cadastros de vacas
+    // Método para exibir os dados de cadastro de vacas
     public static void verCadastros() {
         // StringBuilder para construir a mensagem a ser exibida
         StringBuilder mensagem = new StringBuilder();
-        mensagem.append("Data | Codigo | Nome | Raça | Variação\n");
+        mensagem.append("Código | Nome | Raça | Variação\n");
 
         // Obtém a lista de arquivos no diretório de repositório
         File repositoryDir = new File(REPOSITORY_PATH);
@@ -30,19 +30,20 @@ public class Estatisticas {
                 if (file.isFile() && file.getName().startsWith("vaca_")) {
                     // Lê os dados da vaca e adiciona à mensagem
                     lerDadosVaca(file, mensagem);
+                    mensagem.append("\n");
                 }
             }
         }
 
-        // Exibe a mensagem com os cadastros de vacas
+        // Exibe a mensagem com os dados de cadastro de vacas
         JOptionPane.showMessageDialog(null, mensagem.toString());
     }
 
-    // Método para exibir os lançamentos de vacas
-    public static void verLancamentos() {
+    // Método para exibir as estatísticas de vacas (dados de cadastro + lançamentos)
+    public static void verEstatisticas() {
         // StringBuilder para construir a mensagem a ser exibida
         StringBuilder mensagem = new StringBuilder();
-        mensagem.append("Data | Codigo | Nome | Raça | Variação | Comida Kg | Valor R$ | Leite ml | Venda do Leite R$\n");
+        mensagem.append("Código | Nome | Raça | Variação\n");
 
         // Obtém a lista de arquivos no diretório de repositório
         File repositoryDir = new File(REPOSITORY_PATH);
@@ -56,22 +57,35 @@ public class Estatisticas {
                 if (file.isFile() && file.getName().startsWith("vaca_")) {
                     // Lê os dados da vaca e adiciona à mensagem
                     lerDadosVaca(file, mensagem);
+                    mensagem.append("\nLançamentos:\n");
                     // Lê os lançamentos da vaca e adiciona à mensagem
                     lerLancamentos(file, mensagem);
+                    mensagem.append("\n");
                 }
             }
         }
 
-        // Exibe a mensagem com os lançamentos de vacas
+        // Exibe a mensagem com as estatísticas de vacas
         JOptionPane.showMessageDialog(null, mensagem.toString());
     }
 
     // Método privado para ler os dados de uma vaca de um arquivo
     private static void lerDadosVaca(File vacaFile, StringBuilder mensagem) {
         try (Scanner scanner = new Scanner(new FileReader(vacaFile))) {
-            // Lê cada linha do arquivo e adiciona à mensagem
+            // Itera até encontrar a linha "Lançamento:"
             while (scanner.hasNextLine()) {
-                mensagem.append(scanner.nextLine()).append("\n");
+                String line = scanner.nextLine();
+                if (line.equals("Lançamento:")) {
+                    break;
+                }
+                // Adiciona os dados de cadastro à mensagem
+                String[] parts = line.split(":");
+                if (parts.length > 1) {
+                    mensagem.append(parts[1].trim()).append(" | ");
+                } else {
+                    // Lidar com o caso em que não há ':' na linha (mensagem de aviso, por exemplo)
+                    mensagem.append("Aviso: Dados ausentes").append(" | ");
+                }
             }
         } catch (IOException e) {
             // Imprime a rastreabilidade da exceção em caso de erro de E/S
@@ -82,18 +96,30 @@ public class Estatisticas {
     // Método privado para ler os lançamentos de uma vaca de um arquivo
     private static void lerLancamentos(File vacaFile, StringBuilder mensagem) {
         try (Scanner scanner = new Scanner(new FileReader(vacaFile))) {
-            // Lê cada linha do arquivo e identifica os lançamentos
+            boolean isLancamentoSection = false;
+
+            // Itera até encontrar o próximo dado
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
+
                 if (line.equals("Lançamento:")) {
-                    // Adiciona a marca de início de lançamento à mensagem
-                    mensagem.append("Lançamento:\n");
-                    // Adiciona as linhas seguintes (dados do lançamento) à mensagem
-                    mensagem.append(scanner.nextLine()).append("\n");
-                    mensagem.append(scanner.nextLine()).append("\n");
-                    mensagem.append(scanner.nextLine()).append("\n");
-                    mensagem.append(scanner.nextLine()).append("\n");
-                    mensagem.append(scanner.nextLine()).append("\n");
+                    // Adiciona uma quebra de linha antes de cada novo lançamento
+                    if (isLancamentoSection) {
+                        mensagem.append("\n");
+                    }
+                    isLancamentoSection = true;
+                    continue;
+                }
+
+                if (isLancamentoSection) {
+                    // Adiciona os dados de lançamento à mensagem com espaçamento fixo
+                    String[] parts = line.split(":");
+                    if (parts.length > 1) {
+                        mensagem.append(String.format("%-10s", parts[1].trim())).append(" | ");
+                    } else {
+                        // Lidar com o caso em que não há ':' na linha (mensagem de aviso, por exemplo)
+                        mensagem.append("Aviso: Dados ausentes").append(" | ");
+                    }
                 }
             }
         } catch (IOException e) {

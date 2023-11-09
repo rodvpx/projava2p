@@ -52,7 +52,7 @@ public class Main {
                     Lancamento.lancamento();
                     break;
                 case 4:
-                    Estatisticas.verLancamentos();
+                    Estatisticas.verEstatisticas();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida. Tente novamente.");

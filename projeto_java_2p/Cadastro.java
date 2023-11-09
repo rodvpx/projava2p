@@ -15,16 +15,16 @@ public class Cadastro {
     // Método para cadastrar uma vaca
     public static void cadastrarVaca() {
         // Solicita ao usuário que insira os dados da vaca
-        String input = JOptionPane.showInputDialog("Informe a vaca para cadastro: \n- Data | Código | Nome | Raça | Variação");
+        String input = JOptionPane.showInputDialog("Informe a vaca para cadastro: \n- Código | Nome | Raça | Variação");
 
         if (input != null) {
             // Divide a entrada em partes usando a vírgula como delimitador
-            String[] div = input.split(",");
+            String[] div = input.split(", ");
             // Verifica se foram fornecidas as cinco partes necessárias
-            if (div.length == 5) {
+            if (div.length == 4) {
                 try {
                     // Extrai o código da vaca e converte para inteiro
-                    int codigo = Integer.parseInt(div[1].trim());
+                    int codigo = Integer.parseInt(div[0].trim());
 
                     // Verifica se o código já existe
                     if (codigoExistente(codigo)) {
@@ -42,7 +42,7 @@ public class Cadastro {
                 }
             } else {
                 // Exibe mensagem de erro se a entrada não foi dividida corretamente em 5 partes
-                JOptionPane.showMessageDialog(null, "A entrada não foi dividida corretamente em 5 partes.");
+                JOptionPane.showMessageDialog(null, "A entrada não foi dividida corretamente em 4 partes.");
             }
         } else {
             // Exibe mensagem se a entrada for nula
@@ -57,11 +57,10 @@ public class Cadastro {
 
         try (PrintWriter writer = new PrintWriter(new FileWriter(vacaFile))) {
             // Escreve os dados da vaca no arquivo
-            writer.println("Data: " + div[0].trim());
             writer.println("Código: " + codigo);
-            writer.println("Nome: " + div[2].trim());
-            writer.println("Raça: " + div[3].trim());
-            writer.println("Variação: " + div[4].trim());
+            writer.println("Nome: " + div[1].trim());
+            writer.println("Raça: " + div[2].trim());
+            writer.println("Variação: " + div[3].trim());
         } catch (IOException e) {
             // Imprime a rastreabilidade da exceção em caso de erro de E/S
             e.printStackTrace();

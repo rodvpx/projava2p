@@ -1,0 +1,10 @@
+Código: 6969
+Nome: Mimosa
+Raça: Nelore
+Variação: Rajada
+Lançamento:
+Data: 15112023
+Comida Kg: 5.0
+Valor R$: 2.30
+Leite ml: 6.0
+Venda do Leite R$: 4.99
