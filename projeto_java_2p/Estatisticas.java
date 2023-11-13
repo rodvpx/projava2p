@@ -6,10 +6,10 @@ public class Estatisticas {
 
     public static void verCadastros() {
         StringBuilder mensagem = new StringBuilder();
-        mensagem.append("Data | Codigo | Nome | Raça | Variação\n");
+        mensagem.append("Codigo | Nome | Raça | Variação\n");
 
         for (int i = 0; i < VarShare.id - 1; i++) {
-            mensagem.append(formatarData(VarShare.data[i]) + " | " + VarShare.cod[i] + " | " + VarShare.nome[i] + " | "
+            mensagem.append(VarShare.cod[i] + " | " + VarShare.nome[i] + " | "
                     + VarShare.raca[i] + " | " + VarShare.variacao[i] + "\n");
         }
 
