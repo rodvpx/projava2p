@@ -17,9 +17,7 @@ public class Lancamento {
                 // Verifique se o código já existe
                 int index = encontrarIndicePorCodigo(codigo);
                 if (index != -1) {
-                    mensagem.append("O código: " + codigo + ", Pertence a vaca: " + VarShare.cod[index] + " | "
-                            + VarShare.nome[index] + " | " + VarShare.raca[index] + " | " + VarShare.variacao[index]);
-                    adicionarLancamento(index);
+                    adicionarLancamento(index, codigo);
                 } else {
                     JOptionPane.showMessageDialog(null, "Vaca não encontrada.");
                     String opcao = JOptionPane.showInputDialog("Deseja fazer uma nova consulta? (s/n)");
@@ -33,16 +31,16 @@ public class Lancamento {
         }
     }
 
-    public static void adicionarLancamento(int index) {
-        String input = JOptionPane
-                .showInputDialog(
-                        "Informe o lançamento: \n- Data | Comida Kg | Valor R$ | Leite L | Venda do Leite R$");
+    public static void adicionarLancamento(int index, int codigo) {
+
+        String input = JOptionPane.showInputDialog("O código digitado pertence ao seguinte cadastro:\n" + VarShare.cod[index] + 
+                                    " | " + VarShare.nome[index] + " | " + VarShare.raca[index] + " | " + VarShare.variacao[index] + 
+                                    "\n\nInforme o lançamento: \n- Data | Comida Kg | Valor R$ | Leite L | Venda do Leite R$");
 
         if (input != null) {
             String[] div = input.split(", "); 
             if (div.length == 5) {
 
-                //int i = (int) (VarShare.id - 1);
 
                 try {
                     VarShare.data[index] = Integer.parseInt(div[0].trim());
@@ -51,8 +49,7 @@ public class Lancamento {
                     VarShare.leite[index] = Double.parseDouble(div[3].trim());
                     VarShare.valorVenda[index] = Double.parseDouble(div[4].trim());
 
-                    // Incrementar a variável id para o próximo lançamento
-                    // VarShare.id++;
+            
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Erro: Valores inválidos.");
                 }
