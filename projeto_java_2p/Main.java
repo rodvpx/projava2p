@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
         Cadastro.carregarCadastros();
-        
+        Lancamento.carregarLancamentos();
+
         try {
             int option;
 
@@ -70,7 +71,7 @@ public class Main {
                         Estatisticas.lancamentoAnual();
                         break;
                     case 4:
-                        Estatisticas.verlancamentos();
+                        Estatisticas.verLancamentos();
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Opção inválida. Tente novamente.");

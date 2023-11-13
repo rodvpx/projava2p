@@ -1,0 +1,6 @@
+Código: 1234
+Data: 13112023
+Comida Kg: 7.58
+Custo Comida R$: 3.4
+Leite L: 3.55
+Venda do Leite R$: 2.69

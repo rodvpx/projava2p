@@ -1,0 +1,13 @@
+Código: 5554
+Data: 13112023
+Comida Kg: 8.56
+Custo Comida R$: 4.4
+Leite L: 6.57
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 14112023
+Comida Kg: 7.58
+Custo Comida R$: 3.45
+Leite L: 8.55
+Venda do Leite R$: 2.69
