@@ -1,43 +1,30 @@
 package projeto_java_2p;
 
-import java.io.File;
-
 import javax.swing.JOptionPane;
 
 public class Main {
 
-    // Caminho do diretório de armazenamento
-    private static final String REPOSITORY_PATH = "repository";
-
     public static void main(String[] args) {
-        // Cria o diretório de repositório se não existir
-        createRepositoryIfNotExists();
+        int option; // Inicialize a opção com um valor inválido
 
-        // Variável para armazenar a opção do usuário
-        int option;
-
-        // Loop principal do programa
         do {
-            // Exibe o menu e obtém a opção do usuário
+            // Exibir o menu e permitir ao usuário escolher uma opção
             String input = JOptionPane.showInputDialog(null,
-                    "+-----------------------------------+\n| GERENCIADOR DE CURRAL |\n+-----------------------------------+\nEscolha uma opção:\n\n1. Banco De Dados\n2. Cadastro\n3. Lançamentos\n4. Relatórios\n0. Sair",
+                    "GERENCIADOR DE CURRAL |\n\nEscolha uma opção:\n\n1. Ver Cadastro\n2. Cadastro\n3. Lançamentos\n4. Relatórios\n0. Sair",
                     "Menu",
                     JOptionPane.PLAIN_MESSAGE);
 
-            // Verifica se o usuário clicou em "Cancelar" ou fechou a janela
             if (input == null) {
-                option = 0;
+                option = 0; // Usuário clicou em Cancelar ou fechou a janela
             } else {
                 try {
-                    // Converte a entrada do usuário para um número inteiro
+                    // Converter a entrada para um número inteiro
                     option = Integer.parseInt(input);
                 } catch (NumberFormatException e) {
-                    // Se a conversão falhar, define a opção como -1 (inválida)
-                    option = -1;
+                    option = -1; // Tratamento de entrada inválida
                 }
             }
 
-            // Executa a lógica correspondente à opção escolhida pelo usuário
             switch (option) {
                 case 0:
                     JOptionPane.showMessageDialog(null, "Saindo do programa.");
@@ -46,29 +33,69 @@ public class Main {
                     Estatisticas.verCadastros();
                     break;
                 case 2:
-                    Cadastro.cadastrarVaca();
+                    Cadastro.cadastro();
+                    String cadastrarOpcao = JOptionPane.showInputDialog("Deseja cadastrar uma nova vaca? (s/n)");
+                    if (cadastrarOpcao != null && cadastrarOpcao.equalsIgnoreCase("s")) {
+                        Cadastro.cadastro();
+                    }
                     break;
                 case 3:
                     Lancamento.lancamento();
                     break;
                 case 4:
-                    Estatisticas.verEstatisticas();
+                    subMenu();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida. Tente novamente.");
                     break;
             }
-        } while (option != 0); // Continua o loop enquanto a opção do usuário não for 0 (Sair)
+        } while (option != 0);
     }
 
-    // Método para criar o diretório de repositório se não existir
-    private static void createRepositoryIfNotExists() {
-        // Cria um objeto File representando o diretório de repositório
-        File repositoryDir = new File(REPOSITORY_PATH);
-        
-        // Verifica se o diretório não existe e, se necessário, cria-o
-        if (!repositoryDir.exists()) {
-            repositoryDir.mkdirs();
-        }
+    private static void subMenu() {
+ int option; // Inicialize a opção com um valor inválido
+
+        do {
+            // Exibir o menu e permitir ao usuário escolher uma opção
+            String input = JOptionPane.showInputDialog(null,
+                    "Gerenciamento de curral\n\nEscolha uma opção:\n\n1. Lançamento Diario\n2. Lançamentos Mensal\n3. Lançamentos Anual\n4. Relatórios\n0. Sair",
+                    "Menu",
+                    JOptionPane.PLAIN_MESSAGE);
+
+            if (input == null) {
+                option = 0; // Usuário clicou em Cancelar ou fechou a janela
+            } else {
+                try {
+                    // Converter a entrada para um número inteiro
+                    option = Integer.parseInt(input);
+                } catch (NumberFormatException e) {
+                    option = -1; // Tratamento de entrada inválida
+                }
+            }
+
+            switch (option) {
+                case 0:
+                    break;
+                case 1:
+                    Estatisticas.lancamentoDiario();
+                    break;
+                case 2:
+                    Estatisticas.lancamentoMensal();
+                    break;
+                case 3:
+                    Estatisticas.lancamentoAnual();
+                    break;
+                case 4:
+                    Estatisticas.verlancamentos();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção inválida. Tente novamente.");
+                    break;
+            }
+        } while (option != 0);
+
     }
 }
+
+ // 05112023, 5678, Maria, Holandesa, Marrom
+                // 06112023, 8000, 3.0, 4000, 2.68
