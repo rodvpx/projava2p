@@ -8,13 +8,7 @@ public class Main {
         try {
             int option;
 
-            do {
-                String input = JOptionPane.showInputDialog(null,
-                        "GERENCIADOR DE CURRAL |\n\nEscolha uma opção:\n\n1. Ver Cadastro\n2. Cadastro\n3. Lançamentos\n4. Relatórios\n0. Sair",
-                        "Menu",
-                        JOptionPane.PLAIN_MESSAGE);
-
-                option = obterOpcao(input);
+        
 
                 switch (option) {
                     case 0:
