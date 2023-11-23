@@ -12,9 +12,9 @@
         public static String[] variacao = new String[maxProdutos];
 
         public static double[] comidakg = new double[maxProdutos];
-        public static double[] custoComida = new double[maxProdutos];
+        public static double custoComida = 0.50;
         public static double[] leite = new double[maxProdutos];
-        public static double[] valorVenda = new double[maxProdutos];
+        public static double valorVenda = 2.69;
         
     }
 

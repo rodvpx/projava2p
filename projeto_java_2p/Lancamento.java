@@ -41,17 +41,16 @@ public class Lancamento {
     public static void adicionarLancamento(int index, int codigo) {
         String input = JOptionPane.showInputDialog("O código digitado pertence ao seguinte cadastro:\n" +
                 VarShare.cod[index] + " | " + VarShare.nome[index] + " | " + VarShare.raca[index] + " | " +
-                VarShare.variacao[index] + "\n\nInforme o lançamento: \n- Data | Comida Kg | Custo Comida R$ | Leite L | Venda do Leite R$");
+                VarShare.variacao[index] + "\n\nInforme o lançamento: \n- Data | Comida Kg |  Leite L ");
     
         if (input != null) {
             String[] div = input.split(", ");
-            if (div.length == 5) {
+            if (div.length == 3) {
                 try {
                     VarShare.data[index] = Integer.parseInt(div[0].trim());
                     VarShare.comidakg[index] = Double.parseDouble(div[1].trim());
-                    VarShare.custoComida[index] = Double.parseDouble(div[2].trim());
-                    VarShare.leite[index] = Double.parseDouble(div[3].trim());
-                    VarShare.valorVenda[index] = Double.parseDouble(div[4].trim());
+                    VarShare.leite[index] = Double.parseDouble(div[2].trim());
+                
     
                     // Salvar os dados do lançamento em arquivo
                     salvarLancamentoEmArquivo(codigo);
@@ -102,11 +101,11 @@ public class Lancamento {
                     w.newLine();
                     w.write("Comida Kg: " + VarShare.comidakg[index]);
                     w.newLine();
-                    w.write("Custo Comida R$: " + VarShare.custoComida[index]);
+                    w.write("Custo Comida R$: " + VarShare.custoComida);
                     w.newLine();
                     w.write("Leite L: " + VarShare.leite[index]);
                     w.newLine();
-                    w.write("Venda do Leite R$: " + VarShare.valorVenda[index]);
+                    w.write("Venda do Leite R$: " + VarShare.valorVenda);
                     w.newLine();
                 } catch (IOException e) {
                     JOptionPane.showMessageDialog(null, "Erro ao salvar o lançamento em arquivo: " + e.getMessage());
@@ -158,13 +157,13 @@ private static void lerLancamentoEAdicionar(File arquivo) {
                         VarShare.comidakg[encontrarIndicePorCodigo(codigo)] = Double.parseDouble(partes[1].trim());
                         break;
                     case "Custo Comida R$":
-                        VarShare.custoComida[encontrarIndicePorCodigo(codigo)] = Double.parseDouble(partes[1].trim());
+                        VarShare.custoComida = Double.parseDouble(partes[1].trim());
                         break;
                     case "Leite L":
                         VarShare.leite[encontrarIndicePorCodigo(codigo)] = Double.parseDouble(partes[1].trim());
                         break;
                     case "Venda do Leite R$":
-                        VarShare.valorVenda[encontrarIndicePorCodigo(codigo)] = Double.parseDouble(partes[1].trim());
+                        VarShare.valorVenda = Double.parseDouble(partes[1].trim());
                         break;
                 }
             }

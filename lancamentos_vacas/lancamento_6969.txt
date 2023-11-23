@@ -1,0 +1,7 @@
+
+Código: 6969
+Data: 23112023
+Comida Kg: 10.0
+Custo Comida R$: 0.50
+Leite L: 5.0
+Venda do Leite R$: 2.69

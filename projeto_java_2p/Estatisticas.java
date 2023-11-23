@@ -16,49 +16,97 @@ public class Estatisticas {
         JOptionPane.showMessageDialog(null, mensagem.toString());
     }
 
-    public static void verLancamentos() {
+    public static void lancamentoDiario() {
+
         StringBuilder mensagem = new StringBuilder();
-        mensagem.append("Data | Codigo | Nome | Raça | Variação | Comida Kg | Valor R$ | Leite ml | Venda do Leite R$\n");
-    
+
+        double quantComida = 0, custoComida = 0, leite = 0, valorVenda = 0;
+
+        int data = Integer.parseInt(JOptionPane.showInputDialog("Informe a data (dd/mm/yyyy):"));
+
+        mensagem.append(
+                "Data | Codigo | Nome | Raça | Variação | Comida Kg | Custo Comida R$ | Leite L | Venda do Leite R$\n");
+
         for (int i = 0; i < VarShare.id - 1; i++) {
-            mensagem.append(formatarData(VarShare.data[i])).append(" | ").append(VarShare.cod[i]).append(" | ")
-                    .append(VarShare.nome[i]).append(" | ").append(VarShare.raca[i]).append(" | ")
-                    .append(VarShare.variacao[i]).append(" | ").append(VarShare.comidakg[i]).append("Kg | R$")
-                    .append(VarShare.custoComida[i]).append(" | ").append(VarShare.leite[i]).append("ml | R$")
-                    .append(VarShare.valorVenda[i]).append(" | ").append("\n");
-    
-            int codigoAtual = VarShare.cod[i];
-    
-            // Enquanto houver mais lançamentos para a mesma vaca, continue adicionando
-            while (i < VarShare.id - 1 && codigoAtual == VarShare.cod[i + 1]) {
-                i++;
-                mensagem.append(formatarData(VarShare.data[i])).append(" | ").append(VarShare.cod[i]).append(" | ")
-                        .append(VarShare.nome[i]).append(" | ").append(VarShare.raca[i]).append(" | ")
-                        .append(VarShare.variacao[i]).append(" | ").append(VarShare.comidakg[i]).append("Kg | R$")
-                        .append(VarShare.custoComida[i]).append(" | ").append(VarShare.leite[i]).append("ml | R$")
-                        .append(VarShare.valorVenda[i]).append(" | ").append("\n");
+            if (data == VarShare.data[i]) {
+                mensagem.append(formatarData(data)).append(" | " + VarShare.cod[i] + " | ")
+                        .append(VarShare.nome[i] + " | ").append(VarShare.raca[i] + " | ")
+                        .append(VarShare.variacao[i] + " | ").append(VarShare.comidakg[i] + " Kg | R$ ")
+                        .append(VarShare.custoComida + " | ").append(VarShare.leite[i] + " L | R$ ")
+                        .append(VarShare.valorVenda + "\n");
+
+                quantComida += VarShare.comidakg[i];
+                custoComida = VarShare.custoComida;
+                leite += VarShare.leite[i];
+                valorVenda = VarShare.valorVenda;
             }
-    
-            // Adicione uma linha em branco entre diferentes vacas
-            mensagem.append("\n");
         }
-    
+
+        double custo = quantComida * custoComida;
+        double venda = leite * valorVenda;
+        double balanco = venda - custo;
+
+        mensagem.append(
+                "\n Qt Comida Total | Valor Custo | Custo Comida Total | Produção de Leite Total | Valor Venda Leite | Balanço\n")
+                .append((quantComida) + " Kg | R$ ").append((custoComida) + " | R$ ").append((custo) + " | ")
+                .append((leite) + " L | R$ ").append((valorVenda) + "  | R$ ").append((balanco) + " | ");
+
         JOptionPane.showMessageDialog(null, mensagem.toString());
+
     }
-    
+
+    public static void lancamentoMensal() {
+    StringBuilder mensagem = new StringBuilder();
+
+    double quantComida = 0, custoComida = 0, leite = 0, valorVenda = 0;
+
+    int data = Integer.parseInt(JOptionPane.showInputDialog("Informe a data (mm/yyyy):"));
+
+    int dataMes = (data % 10000) / 100;
+    int dataAno = data % 100;
+
+    mensagem.append("Data | Codigo | Nome | Raça | Variação | Comida Kg | Custo Comida R$ | Leite L | Venda do Leite R$\n");
+
+    for (int i = 0; i < VarShare.id - 1; i++) {
+        int lancamentoMes = (VarShare.data[i] % 10000) / 100;
+        int lancamentoAno = VarShare.data[i] % 100;
+        
+        System.out.println("Vacina: " + VarShare.cod[i] + " Data: " + VarShare.data[i]);
+
+        if (lancamentoMes == dataMes && lancamentoAno == dataAno) {
+            mensagem.append(formatarData(VarShare.data[i])).append(" | " + VarShare.cod[i] + " | ")
+                    .append(VarShare.nome[i] + " | ").append(VarShare.raca[i] + " | ")
+                    .append(VarShare.variacao[i] + " | ").append(VarShare.comidakg[i] + " Kg | R$ ")
+                    .append(VarShare.custoComida + " | ").append(VarShare.leite[i] + " L | R$ ")
+                    .append(VarShare.valorVenda + "\n");
+
+            quantComida += VarShare.comidakg[i];
+            custoComida = VarShare.custoComida;
+            leite += VarShare.leite[i];
+            valorVenda = VarShare.valorVenda;
+        }
+    }
+
+    double custo = quantComida * custoComida;
+    double venda = leite * valorVenda;
+    double balanco = venda - custo;
+
+    mensagem.append(
+            "\n Qt Comida Total | Valor Custo | Custo Comida Total | Produção de Leite Total | Valor Venda Leite | Balanço\n")
+            .append((quantComida) + " Kg | R$ ").append((custoComida) + " | R$ ").append((custo) + " | ")
+            .append((leite) + " L | R$ ").append((valorVenda) + "  | R$ ").append((balanco) + " | ");
+
+    JOptionPane.showMessageDialog(null, mensagem.toString());
+}
+
+
+    public static void lancamentoAnual() {
+    }
+
     public static String formatarData(int data) {
         int dia = data / 1000000;
         int mes = (data / 10000) % 100;
         int ano = data % 10000;
         return String.format("%02d/%02d/%04d", dia, mes, ano);
-    }
-
-    public static void lancamentoDiario() {
-    }
-
-    public static void lancamentoMensal() {
-    }
-
-    public static void lancamentoAnual() {
     }
 }

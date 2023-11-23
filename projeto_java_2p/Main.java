@@ -52,7 +52,7 @@ public class Main {
 
             do {
                 String input = JOptionPane.showInputDialog(null,
-                        "Gerenciamento de curral\n\nEscolha uma opção:\n\n1. Lançamento Diário\n2. Lançamentos Mensais\n3. Lançamentos Anuais\n4. Relatórios\n0. Sair",
+                        "Gerenciamento de curral\n\nEscolha uma opção:\n\n1. Lançamento Diário\n2. Lançamentos Mensais\n3. Lançamentos Anuais\n0. Sair",
                         "Menu",
                         JOptionPane.PLAIN_MESSAGE);
 
@@ -69,9 +69,6 @@ public class Main {
                         break;
                     case 3:
                         Estatisticas.lancamentoAnual();
-                        break;
-                    case 4:
-                        Estatisticas.verLancamentos();
                         break;
                     default:
                         JOptionPane.showMessageDialog(null, "Opção inválida. Tente novamente.");
@@ -100,3 +97,11 @@ public class Main {
         e.printStackTrace();
     }
 }
+
+/* 1- deixar o valor de custo de comida e valor de venda de leite num valor padrão
+ * dessa forma não precisando prencher esses dados na hora do lançamento
+ * 
+ * 2- ver algum de formatar os dados na hora da impressão, afim de estetica bonita
+ * 
+ * 3- terminar as estatisticas mensal e anual
+ */

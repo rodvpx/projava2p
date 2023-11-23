@@ -1,0 +1,7 @@
+
+Código: 5552
+Data: 16112023
+Comida Kg: 10.0
+Custo Comida R$: 0.50
+Leite L: 8.0
+Venda do Leite R$: 2.69
