@@ -42,19 +42,22 @@ public class Lancamento {
         String input = JOptionPane.showInputDialog("O código digitado pertence ao seguinte cadastro:\n" +
                 VarShare.cod[index] + " | " + VarShare.nome[index] + " | " + VarShare.raca[index] + " | " +
                 VarShare.variacao[index] + "\n\nInforme o lançamento: \n- Data | Comida Kg |  Leite L ");
-    
+
         if (input != null) {
             String[] div = input.split(", ");
             if (div.length == 3) {
                 try {
-                    VarShare.data[index] = Integer.parseInt(div[0].trim());
-                    VarShare.comidakg[index] = Double.parseDouble(div[1].trim());
-                    VarShare.leite[index] = Double.parseDouble(div[2].trim());
-                
-    
+                    VarShare.lancamento[index] = new LancamentoVaca();
+                    VarShare.lancamento[index].data[VarShare.numL[index]] = Integer.parseInt(div[0].trim());
+                    VarShare.lancamento[index].comidakg[VarShare.numL[index]] = Double
+                            .parseDouble(div[1].trim());
+                    VarShare.lancamento[index].leite[VarShare.numL[index]] = Double
+                            .parseDouble(div[2].trim());
+
                     // Salvar os dados do lançamento em arquivo
                     salvarLancamentoEmArquivo(codigo);
-    
+                    VarShare.numL[index]++;
+
                 } catch (NumberFormatException e) {
                     JOptionPane.showMessageDialog(null, "Erro: Valores inválidos.");
                 }
@@ -65,8 +68,6 @@ public class Lancamento {
             JOptionPane.showMessageDialog(null, "Entrada nula. Por favor, forneça uma entrada válida.");
         }
     }
-    
-    
 
     private static int encontrarIndicePorCodigo(int codigo) {
         for (int i = 0; i < VarShare.cod.length; i++) {
@@ -79,34 +80,38 @@ public class Lancamento {
 
     public static void salvarLancamentoEmArquivo(int codigo) {
         int index = encontrarIndicePorCodigo(codigo);
-    
+
         if (index != -1) {
             String diretorio = "lancamentos_vacas";
             File diretorioFile = new File(diretorio);
-    
+
             try {
                 if (!diretorioFile.exists()) {
                     diretorioFile.mkdirs();
                 }
-    
+
                 // Criar o caminho completo do arquivo
                 String caminhoArquivo = diretorio + "/lancamento_" + codigo + ".txt";
-    
-                // Adiciona os dados de lançamento ao arquivo, sem sobrescrever o conteúdo existente
+
+                // Adiciona os dados de lançamento ao arquivo, sem sobrescrever o conteúdo
+                // existente
                 try (BufferedWriter w = new BufferedWriter(new FileWriter(caminhoArquivo, true))) {
-                    w.newLine();  // Adiciona uma linha em branco para separar os lançamentos
-                    w.write("Código: " + VarShare.cod[index]);
-                    w.newLine();
-                    w.write("Data: " + VarShare.data[index]);
-                    w.newLine();
-                    w.write("Comida Kg: " + VarShare.comidakg[index]);
-                    w.newLine();
-                    w.write("Custo Comida R$: " + VarShare.custoComida);
-                    w.newLine();
-                    w.write("Leite L: " + VarShare.leite[index]);
-                    w.newLine();
-                    w.write("Venda do Leite R$: " + VarShare.valorVenda);
-                    w.newLine();
+                    for (int i = 0; i < VarShare.numL[index]; i++) {
+                        w.newLine(); // Adiciona uma linha em branco para separar os lançamentos
+                        w.write("Código: " + VarShare.cod[index]);
+                        w.newLine();
+                        w.write("Data: " + VarShare.lancamento[index].data[i]);
+                        w.newLine();
+                        w.write("Comida Kg: " + VarShare.lancamento[index].comidakg[i]);
+                        w.newLine();
+                        w.write("Custo Comida R$: " + VarShare.lancamento[index].custoComida);
+                        w.newLine();
+                        w.write("Leite L: " + VarShare.lancamento[index].leite[index]);
+                        w.newLine();
+                        w.write("Venda do Leite R$: " + VarShare.lancamento[index].valorVenda);
+                        w.newLine();
+
+                    }
                 } catch (IOException e) {
                     JOptionPane.showMessageDialog(null, "Erro ao salvar o lançamento em arquivo: " + e.getMessage());
                     e.printStackTrace();
@@ -119,60 +124,70 @@ public class Lancamento {
             JOptionPane.showMessageDialog(null, "Vaca não encontrada para salvar o lançamento.");
         }
     }
-    
 
-public static void carregarLancamentos() {
-    String diretorio = "lancamentos_vacas";
-    File diretorioFile = new File(diretorio);
+    public static void carregarLancamentos() {
+        String diretorio = "lancamentos_vacas";
+        File diretorioFile = new File(diretorio);
 
-    if (diretorioFile.exists() && diretorioFile.isDirectory()) {
-        File[] arquivos = diretorioFile.listFiles();
+        if (diretorioFile.exists() && diretorioFile.isDirectory()) {
+            File[] arquivos = diretorioFile.listFiles();
 
-        if (arquivos != null && arquivos.length > 0) {
-            for (File arquivo : arquivos) {
-                if (arquivo.isFile()) {
-                    lerLancamentoEAdicionar(arquivo);
+            if (arquivos != null && arquivos.length > 0) {
+                for (File arquivo : arquivos) {
+                    if (arquivo.isFile()) {
+                        lerLancamentoEAdicionar(arquivo);
+                    }
                 }
             }
         }
     }
-}
 
-private static void lerLancamentoEAdicionar(File arquivo) {
-    try (BufferedReader reader = new BufferedReader(new FileReader(arquivo))) {
-        String linha;
-        int codigo = -1;
-
-        while ((linha = reader.readLine()) != null) {
-            String[] partes = linha.split(":");
-            if (partes.length == 2) {
-                switch (partes[0].trim()) {
-                    case "Código":
-                        codigo = Integer.parseInt(partes[1].trim());
-                        break;
-                    case "Data":
-                        VarShare.data[encontrarIndicePorCodigo(codigo)] = Integer.parseInt(partes[1].trim());
-                        break;
-                    case "Comida Kg":
-                        VarShare.comidakg[encontrarIndicePorCodigo(codigo)] = Double.parseDouble(partes[1].trim());
-                        break;
-                    case "Custo Comida R$":
-                        VarShare.custoComida = Double.parseDouble(partes[1].trim());
-                        break;
-                    case "Leite L":
-                        VarShare.leite[encontrarIndicePorCodigo(codigo)] = Double.parseDouble(partes[1].trim());
-                        break;
-                    case "Venda do Leite R$":
-                        VarShare.valorVenda = Double.parseDouble(partes[1].trim());
-                        break;
+    private static void lerLancamentoEAdicionar(File arquivo) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(arquivo))) {
+            String linha;
+            int codigo = -1;
+            int index = -1;
+            int lancamento = -1;
+            boolean encontrou = false;
+            while ((linha = reader.readLine()) != null) {
+                String[] partes = linha.split(":");
+                if (partes.length == 2) {
+                    switch (partes[0].trim()) {
+                        case "Código":
+                            codigo = Integer.parseInt(partes[1].trim());
+                            index = encontrarIndicePorCodigo(codigo);
+                            lancamento++;
+                            if(!encontrou){
+                                encontrou = true;
+                                VarShare.lancamento[index] = new LancamentoVaca();
+                            }
+                            break;
+                        case "Data":
+                            VarShare.lancamento[index].data[lancamento] = Integer.parseInt(partes[1].trim());
+                            break;
+                        case "Comida Kg":
+                            VarShare.lancamento[index].comidakg[lancamento] = Double.parseDouble(partes[1].trim());
+                            break;
+                        case "Custo Comida R$":
+                            VarShare.lancamento[index].custoComida = Double.parseDouble(partes[1].trim());
+                            break;
+                        case "Leite L":
+                            VarShare.lancamento[index].leite[lancamento] = Double.parseDouble(partes[1].trim());
+                            break;
+                        case "Venda do Leite R$":
+                            VarShare.lancamento[index].valorVenda = Double.parseDouble(partes[1].trim());
+                            break;
+                    }
                 }
-            }
-        }
-    } catch (IOException | NumberFormatException e) {
-        JOptionPane.showMessageDialog(null, "Erro ao ler o lançamento do arquivo: " + arquivo.getName());
-        e.printStackTrace();
-    }
-}
 
+            }
+
+            VarShare.numL[index] = lancamento + 1;
+
+        } catch (IOException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao ler o lançamento do arquivo: " + arquivo.getName());
+            e.printStackTrace();
+        }
+    }
 
 }

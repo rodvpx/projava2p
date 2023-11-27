@@ -5,17 +5,13 @@
         public static long id = 1;
         public static int maxProdutos = 200;
 
-        public static int[] data = new int[maxProdutos];
         public static int[] cod = new int[maxProdutos];
         public static String[] nome = new String[maxProdutos];
         public static String[] raca = new String[maxProdutos];
         public static String[] variacao = new String[maxProdutos];
-
-        public static double[] comidakg = new double[maxProdutos];
-        public static double custoComida = 0.50;
-        public static double[] leite = new double[maxProdutos];
-        public static double valorVenda = 2.69;
+        public static int [] numL = new int[maxProdutos];
         
+    public static LancamentoVaca [] lancamento = new LancamentoVaca[maxProdutos];
     }
 
 
