@@ -18,3 +18,24 @@ Comida Kg: 90.0
 Custo Comida R$: 0.50
 Leite L: 8.0
 Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 0
+Comida Kg: 0.0
+Custo Comida R$: 0.5
+Leite L: 0.0
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 0
+Comida Kg: 0.0
+Custo Comida R$: 0.5
+Leite L: 0.0
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 0
+Comida Kg: 0.0
+Custo Comida R$: 0.5
+Leite L: 0.0
+Venda do Leite R$: 2.69
