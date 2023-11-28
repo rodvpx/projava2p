@@ -47,7 +47,8 @@ public class Lancamento {
             String[] div = input.split(", ");
             if (div.length == 3) {
                 try {
-                    VarShare.lancamento[index] = new LancamentoVaca();
+                    if(VarShare.lancamento[index] == null)
+                        VarShare.lancamento[index] = new LancamentoVaca();
                     VarShare.lancamento[index].data[VarShare.numL[index]] = Integer.parseInt(div[0].trim());
                     VarShare.lancamento[index].comidakg[VarShare.numL[index]] = Double
                             .parseDouble(div[1].trim());
@@ -96,22 +97,21 @@ public class Lancamento {
                 // Adiciona os dados de lançamento ao arquivo, sem sobrescrever o conteúdo
                 // existente
                 try (BufferedWriter w = new BufferedWriter(new FileWriter(caminhoArquivo, true))) {
-                    for (int i = 0; i < VarShare.numL[index]; i++) {
-                        w.newLine(); // Adiciona uma linha em branco para separar os lançamentos
-                        w.write("Código: " + VarShare.cod[index]);
-                        w.newLine();
-                        w.write("Data: " + VarShare.lancamento[index].data[i]);
-                        w.newLine();
-                        w.write("Comida Kg: " + VarShare.lancamento[index].comidakg[i]);
-                        w.newLine();
-                        w.write("Custo Comida R$: " + VarShare.lancamento[index].custoComida);
-                        w.newLine();
-                        w.write("Leite L: " + VarShare.lancamento[index].leite[index]);
-                        w.newLine();
-                        w.write("Venda do Leite R$: " + VarShare.lancamento[index].valorVenda);
-                        w.newLine();
+                    
+                    w.newLine(); // Adiciona uma linha em branco para separar os lançamentos
+                    w.write("Código: " + VarShare.cod[index]);
+                    w.newLine();
+                    w.write("Data: " + VarShare.lancamento[index].data[VarShare.numL[index]]);
+                    w.newLine();
+                    w.write("Comida Kg: " + VarShare.lancamento[index].comidakg[VarShare.numL[index]]);
+                    w.newLine();
+                    w.write("Custo Comida R$: " + VarShare.lancamento[index].custoComida);
+                    w.newLine();
+                    w.write("Leite L: " + VarShare.lancamento[index].leite[VarShare.numL[index]]);
+                    w.newLine();
+                    w.write("Venda do Leite R$: " + VarShare.lancamento[index].valorVenda);
+                    w.newLine();
 
-                    }
                 } catch (IOException e) {
                     JOptionPane.showMessageDialog(null, "Erro ao salvar o lançamento em arquivo: " + e.getMessage());
                     e.printStackTrace();

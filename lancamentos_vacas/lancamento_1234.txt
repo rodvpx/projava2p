@@ -11,3 +11,17 @@ Comida Kg: 20.0
 Custo Comida R$: 0.50
 Leite L: 9.0
 Venda do Leite R$: 2.69
+
+Código: 1234
+Data: 13112023
+Comida Kg: 7.58
+Custo Comida R$: 0.5
+Leite L: 9.0
+Venda do Leite R$: 2.69
+
+Código: 1234
+Data: 16112023
+Comida Kg: 20.0
+Custo Comida R$: 0.5
+Leite L: 9.0
+Venda do Leite R$: 2.69

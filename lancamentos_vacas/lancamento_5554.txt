@@ -1,41 +1,34 @@
 Código: 5554
 Data: 13112023
 Comida Kg: 8.56
-Custo Comida R$: 0.50
+Custo Comida R$: 0.5
 Leite L: 6.57
 Venda do Leite R$: 2.69
 
 Código: 5554
 Data: 14112023
 Comida Kg: 7.58
-Custo Comida R$: 0.50
-Leite L: 8.55
+Custo Comida R$: 0.5
+Leite L: 6.57
 Venda do Leite R$: 2.69
 
 Código: 5554
 Data: 16112023
 Comida Kg: 90.0
-Custo Comida R$: 0.50
-Leite L: 8.0
+Custo Comida R$: 0.5
+Leite L: 6.57
 Venda do Leite R$: 2.69
 
 Código: 5554
-Data: 0
-Comida Kg: 0.0
+Data: 11122023
+Comida Kg: 8.0
 Custo Comida R$: 0.5
-Leite L: 0.0
+Leite L: 6.57
 Venda do Leite R$: 2.69
 
 Código: 5554
-Data: 0
-Comida Kg: 0.0
+Data: 28112023
+Comida Kg: 6.0
 Custo Comida R$: 0.5
-Leite L: 0.0
-Venda do Leite R$: 2.69
-
-Código: 5554
-Data: 0
-Comida Kg: 0.0
-Custo Comida R$: 0.5
-Leite L: 0.0
+Leite L: 6.0
 Venda do Leite R$: 2.69
