@@ -11,22 +11,28 @@ import javax.swing.JOptionPane;
 
 public class Lancamento {
 
+    // StringBuilder para armazenar mensagens (não está sendo usado no código
+    // fornecido)
     static StringBuilder mensagem = new StringBuilder();
 
+    // Método para realizar o lançamento de dados relacionados a uma vaca
     public static void lancamento() {
 
+        // Solicita o código da vaca para o lançamento
         String input = JOptionPane.showInputDialog("Informe o código da vaca:");
 
         if (input != null) {
             try {
                 int codigo = Integer.parseInt(input);
 
-                // Verifique se o código já existe
+                // Verifica se o código já existe
                 int index = encontrarIndicePorCodigo(codigo);
                 if (index != -1) {
+                    // Adiciona o lançamento relacionado à vaca
                     adicionarLancamento(index, codigo);
                 } else {
                     JOptionPane.showMessageDialog(null, "Vaca não encontrada.");
+                    // Permite ao usuário fazer uma nova consulta
                     String opcao = JOptionPane.showInputDialog("Deseja fazer uma nova consulta? (s/n)");
                     if (opcao != null && opcao.equalsIgnoreCase("s")) {
                         lancamento();
@@ -38,24 +44,30 @@ public class Lancamento {
         }
     }
 
+    // Método para adicionar um lançamento relacionado a uma vaca
     public static void adicionarLancamento(int index, int codigo) {
+        // Solicita informações do lançamento ao usuário
         String input = JOptionPane.showInputDialog("O código digitado pertence ao seguinte cadastro:\n" +
                 VarShare.cod[index] + " | " + VarShare.nome[index] + " | " + VarShare.raca[index] + " | " +
-                VarShare.variacao[index] + "\n\nInforme o lançamento: \n- Data | Comida Kg |  Leite L ");
+                VarShare.variacao[index] + "\n\nInforme o lançamento: \n- Data | Comida Kg | Leite L ");
 
         if (input != null) {
+            // Divide as informações inseridas pelo usuário
             String[] div = input.split(", ");
+
+            // Verifica se as informações foram inseridas corretamente
             if (div.length == 3) {
                 try {
-                    if(VarShare.lancamento[index] == null)
+                    // Inicializa a estrutura de dados para o lançamento, se ainda não estiver
+                    if (VarShare.lancamento[index] == null)
                         VarShare.lancamento[index] = new LancamentoVaca();
-                    VarShare.lancamento[index].data[VarShare.numL[index]] = Integer.parseInt(div[0].trim());
-                    VarShare.lancamento[index].comidakg[VarShare.numL[index]] = Double
-                            .parseDouble(div[1].trim());
-                    VarShare.lancamento[index].leite[VarShare.numL[index]] = Double
-                            .parseDouble(div[2].trim());
 
-                    // Salvar os dados do lançamento em arquivo
+                    // Preenche os dados do lançamento
+                    VarShare.lancamento[index].data[VarShare.numL[index]] = Integer.parseInt(div[0].trim());
+                    VarShare.lancamento[index].comidakg[VarShare.numL[index]] = Double.parseDouble(div[1].trim());
+                    VarShare.lancamento[index].leite[VarShare.numL[index]] = Double.parseDouble(div[2].trim());
+
+                    // Salva os dados do lançamento em arquivo
                     salvarLancamentoEmArquivo(codigo);
                     VarShare.numL[index]++;
 
@@ -70,6 +82,7 @@ public class Lancamento {
         }
     }
 
+    // Método para encontrar o índice de uma vaca no vetor pelo código
     private static int encontrarIndicePorCodigo(int codigo) {
         for (int i = 0; i < VarShare.cod.length; i++) {
             if (VarShare.cod[i] == codigo) {
@@ -79,6 +92,7 @@ public class Lancamento {
         return -1; // Código não encontrado
     }
 
+    // Método para salvar os dados do lançamento em arquivo
     public static void salvarLancamentoEmArquivo(int codigo) {
         int index = encontrarIndicePorCodigo(codigo);
 
@@ -91,13 +105,13 @@ public class Lancamento {
                     diretorioFile.mkdirs();
                 }
 
-                // Criar o caminho completo do arquivo
+                // Cria o caminho completo do arquivo
                 String caminhoArquivo = diretorio + "/lancamento_" + codigo + ".txt";
 
                 // Adiciona os dados de lançamento ao arquivo, sem sobrescrever o conteúdo
                 // existente
                 try (BufferedWriter w = new BufferedWriter(new FileWriter(caminhoArquivo, true))) {
-                    
+
                     w.newLine(); // Adiciona uma linha em branco para separar os lançamentos
                     w.write("Código: " + VarShare.cod[index]);
                     w.newLine();
@@ -125,6 +139,7 @@ public class Lancamento {
         }
     }
 
+    // Método para carregar os lançamentos a partir de arquivos
     public static void carregarLancamentos() {
         String diretorio = "lancamentos_vacas";
         File diretorioFile = new File(diretorio);
@@ -135,6 +150,7 @@ public class Lancamento {
             if (arquivos != null && arquivos.length > 0) {
                 for (File arquivo : arquivos) {
                     if (arquivo.isFile()) {
+                        // Lê os lançamentos do arquivo e adiciona aos vetores
                         lerLancamentoEAdicionar(arquivo);
                     }
                 }
@@ -142,6 +158,7 @@ public class Lancamento {
         }
     }
 
+    // Método para ler os dados de lançamento de um arquivo e adicionar aos vetores
     private static void lerLancamentoEAdicionar(File arquivo) {
         try (BufferedReader reader = new BufferedReader(new FileReader(arquivo))) {
             String linha;
@@ -149,6 +166,8 @@ public class Lancamento {
             int index = -1;
             int lancamento = -1;
             boolean encontrou = false;
+
+            // Lê cada linha do arquivo
             while ((linha = reader.readLine()) != null) {
                 String[] partes = linha.split(":");
                 if (partes.length == 2) {
@@ -157,7 +176,7 @@ public class Lancamento {
                             codigo = Integer.parseInt(partes[1].trim());
                             index = encontrarIndicePorCodigo(codigo);
                             lancamento++;
-                            if(!encontrou){
+                            if (!encontrou) {
                                 encontrou = true;
                                 VarShare.lancamento[index] = new LancamentoVaca();
                             }
@@ -179,7 +198,6 @@ public class Lancamento {
                             break;
                     }
                 }
-
             }
 
             VarShare.numL[index] = lancamento + 1;
@@ -189,5 +207,4 @@ public class Lancamento {
             e.printStackTrace();
         }
     }
-
 }

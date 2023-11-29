@@ -1,34 +1,1259 @@
 Código: 5554
-Data: 13112023
-Comida Kg: 8.56
+Data: 01012022
+Comida Kg: 16.7
 Custo Comida R$: 0.5
-Leite L: 6.57
+Leite L: 7.7
 Venda do Leite R$: 2.69
 
 Código: 5554
-Data: 14112023
-Comida Kg: 7.58
+Data: 02012022
+Comida Kg: 14.2
 Custo Comida R$: 0.5
-Leite L: 6.57
+Leite L: 8.0
 Venda do Leite R$: 2.69
 
 Código: 5554
-Data: 16112023
-Comida Kg: 90.0
+Data: 03012022
+Comida Kg: 15.9
 Custo Comida R$: 0.5
-Leite L: 6.57
+Leite L: 7.8
 Venda do Leite R$: 2.69
 
 Código: 5554
-Data: 11122023
-Comida Kg: 8.0
+Data: 04012022
+Comida Kg: 13.6
 Custo Comida R$: 0.5
-Leite L: 6.57
+Leite L: 8.2
 Venda do Leite R$: 2.69
 
 Código: 5554
-Data: 28112023
-Comida Kg: 6.0
+Data: 05012022
+Comida Kg: 12.1
 Custo Comida R$: 0.5
-Leite L: 6.0
+Leite L: 6.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 06012022
+Comida Kg: 15.5
+Custo Comida R$: 0.5
+Leite L: 9.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 07012022
+Comida Kg: 13.2
+Custo Comida R$: 0.5
+Leite L: 6.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 08012022
+Comida Kg: 16.8
+Custo Comida R$: 0.5
+Leite L: 7.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 09012022
+Comida Kg: 14.4
+Custo Comida R$: 0.5
+Leite L: 8.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 10012022
+Comida Kg: 12.1
+Custo Comida R$: 0.5
+Leite L: 6.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 11012022
+Comida Kg: 15.9
+Custo Comida R$: 0.5
+Leite L: 9.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 12012022
+Comida Kg: 13.6
+Custo Comida R$: 0.5
+Leite L: 7.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 13012022
+Comida Kg: 17.2
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 14012022
+Comida Kg: 14.8
+Custo Comida R$: 0.5
+Leite L: 7.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 15012022
+Comida Kg: 12.5
+Custo Comida R$: 0.5
+Leite L: 8.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 16012022
+Comida Kg: 15.3
+Custo Comida R$: 0.5
+Leite L: 7.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 17012022
+Comida Kg: 13.8
+Custo Comida R$: 0.5
+Leite L: 8.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 18012022
+Comida Kg: 16.5
+Custo Comida R$: 0.5
+Leite L: 7.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 19012022
+Comida Kg: 14.1
+Custo Comida R$: 0.5
+Leite L: 9.0
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 20012022
+Comida Kg: 11.6
+Custo Comida R$: 0.5
+Leite L: 7.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 21012022
+Comida Kg: 15.4
+Custo Comida R$: 0.5
+Leite L: 8.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 22012022
+Comida Kg: 13.1
+Custo Comida R$: 0.5
+Leite L: 6.6
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 23012022
+Comida Kg: 16.7
+Custo Comida R$: 0.5
+Leite L: 7.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 24012022
+Comida Kg: 14.3
+Custo Comida R$: 0.5
+Leite L: 8.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 25012022
+Comida Kg: 11.8
+Custo Comida R$: 0.5
+Leite L: 6.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 26012022
+Comida Kg: 15.6
+Custo Comida R$: 0.5
+Leite L: 9.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 27012022
+Comida Kg: 13.2
+Custo Comida R$: 0.5
+Leite L: 7.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 28012022
+Comida Kg: 16.8
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 29012022
+Comida Kg: 14.4
+Custo Comida R$: 0.5
+Leite L: 7.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 30012022
+Comida Kg: 12.1
+Custo Comida R$: 0.5
+Leite L: 8.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 01022022
+Comida Kg: 15.2
+Custo Comida R$: 0.5
+Leite L: 7.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 02022022
+Comida Kg: 13.8
+Custo Comida R$: 0.5
+Leite L: 8.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 03022022
+Comida Kg: 14.6
+Custo Comida R$: 0.5
+Leite L: 7.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 04022022
+Comida Kg: 12.3
+Custo Comida R$: 0.5
+Leite L: 8.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 05022022
+Comida Kg: 10.8
+Custo Comida R$: 0.5
+Leite L: 6.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 06022022
+Comida Kg: 14.2
+Custo Comida R$: 0.5
+Leite L: 9.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 07022022
+Comida Kg: 11.9
+Custo Comida R$: 0.5
+Leite L: 6.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 08022022
+Comida Kg: 15.5
+Custo Comida R$: 0.5
+Leite L: 7.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 09022022
+Comida Kg: 13.1
+Custo Comida R$: 0.5
+Leite L: 8.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 10022022
+Comida Kg: 10.8
+Custo Comida R$: 0.5
+Leite L: 6.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 11022022
+Comida Kg: 14.6
+Custo Comida R$: 0.5
+Leite L: 9.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 12022022
+Comida Kg: 12.3
+Custo Comida R$: 0.5
+Leite L: 7.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 13022022
+Comida Kg: 15.9
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 14022022
+Comida Kg: 13.5
+Custo Comida R$: 0.5
+Leite L: 7.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 15022022
+Comida Kg: 11.2
+Custo Comida R$: 0.5
+Leite L: 8.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 16022022
+Comida Kg: 14.0
+Custo Comida R$: 0.5
+Leite L: 7.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 17022022
+Comida Kg: 12.5
+Custo Comida R$: 0.5
+Leite L: 8.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 18022022
+Comida Kg: 15.2
+Custo Comida R$: 0.5
+Leite L: 7.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 19022022
+Comida Kg: 12.8
+Custo Comida R$: 0.5
+Leite L: 9.0
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 20022022
+Comida Kg: 10.3
+Custo Comida R$: 0.5
+Leite L: 7.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 21022022
+Comida Kg: 14.1
+Custo Comida R$: 0.5
+Leite L: 8.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 22022022
+Comida Kg: 11.8
+Custo Comida R$: 0.5
+Leite L: 6.6
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 23022022
+Comida Kg: 15.4
+Custo Comida R$: 0.5
+Leite L: 7.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 24022022
+Comida Kg: 13.0
+Custo Comida R$: 0.5
+Leite L: 8.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 25022022
+Comida Kg: 10.5
+Custo Comida R$: 0.5
+Leite L: 6.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 26022022
+Comida Kg: 14.3
+Custo Comida R$: 0.5
+Leite L: 9.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 27022022
+Comida Kg: 11.9
+Custo Comida R$: 0.5
+Leite L: 7.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 28022022
+Comida Kg: 15.5
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 29022022
+Comida Kg: 13.1
+Custo Comida R$: 0.5
+Leite L: 7.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 01032022
+Comida Kg: 14.5
+Custo Comida R$: 0.5
+Leite L: 7.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 02032022
+Comida Kg: 12.7
+Custo Comida R$: 0.5
+Leite L: 8.6
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 03032022
+Comida Kg: 13.5
+Custo Comida R$: 0.5
+Leite L: 7.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 04032022
+Comida Kg: 11.2
+Custo Comida R$: 0.5
+Leite L: 8.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 05032022
+Comida Kg: 9.7
+Custo Comida R$: 0.5
+Leite L: 6.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 06032022
+Comida Kg: 13.1
+Custo Comida R$: 0.5
+Leite L: 9.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 07032022
+Comida Kg: 10.8
+Custo Comida R$: 0.5
+Leite L: 6.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 08032022
+Comida Kg: 14.4
+Custo Comida R$: 0.5
+Leite L: 7.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 09032022
+Comida Kg: 12.0
+Custo Comida R$: 0.5
+Leite L: 8.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 10032022
+Comida Kg: 9.7
+Custo Comida R$: 0.5
+Leite L: 6.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 11032022
+Comida Kg: 13.5
+Custo Comida R$: 0.5
+Leite L: 9.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 12032022
+Comida Kg: 11.2
+Custo Comida R$: 0.5
+Leite L: 7.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 13032022
+Comida Kg: 14.8
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 14032022
+Comida Kg: 12.5
+Custo Comida R$: 0.5
+Leite L: 7.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 15032022
+Comida Kg: 10.2
+Custo Comida R$: 0.5
+Leite L: 8.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 16032022
+Comida Kg: 13.0
+Custo Comida R$: 0.5
+Leite L: 7.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 17032022
+Comida Kg: 11.5
+Custo Comida R$: 0.5
+Leite L: 8.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 18032022
+Comida Kg: 14.2
+Custo Comida R$: 0.5
+Leite L: 7.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 19032022
+Comida Kg: 11.8
+Custo Comida R$: 0.5
+Leite L: 9.0
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 20032022
+Comida Kg: 9.3
+Custo Comida R$: 0.5
+Leite L: 7.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 21032022
+Comida Kg: 13.1
+Custo Comida R$: 0.5
+Leite L: 8.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 22032022
+Comida Kg: 10.8
+Custo Comida R$: 0.5
+Leite L: 6.6
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 23032022
+Comida Kg: 14.4
+Custo Comida R$: 0.5
+Leite L: 7.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 24032022
+Comida Kg: 12.0
+Custo Comida R$: 0.5
+Leite L: 8.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 25032022
+Comida Kg: 9.5
+Custo Comida R$: 0.5
+Leite L: 6.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 26032022
+Comida Kg: 13.3
+Custo Comida R$: 0.5
+Leite L: 9.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 27032022
+Comida Kg: 10.9
+Custo Comida R$: 0.5
+Leite L: 7.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 28032022
+Comida Kg: 14.5
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 29032022
+Comida Kg: 12.1
+Custo Comida R$: 0.5
+Leite L: 7.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 30032022
+Comida Kg: 9.8
+Custo Comida R$: 0.5
+Leite L: 8.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 01012023
+Comida Kg: 14.8
+Custo Comida R$: 0.5
+Leite L: 8.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 02012023
+Comida Kg: 11.5
+Custo Comida R$: 0.5
+Leite L: 6.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 03012023
+Comida Kg: 13.2
+Custo Comida R$: 0.5
+Leite L: 7.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 04012023
+Comida Kg: 16.7
+Custo Comida R$: 0.5
+Leite L: 9.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 05012023
+Comida Kg: 12.9
+Custo Comida R$: 0.5
+Leite L: 8.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 06012023
+Comida Kg: 15.3
+Custo Comida R$: 0.5
+Leite L: 7.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 07012023
+Comida Kg: 14.0
+Custo Comida R$: 0.5
+Leite L: 6.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 08012023
+Comida Kg: 17.2
+Custo Comida R$: 0.5
+Leite L: 8.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 09012023
+Comida Kg: 13.5
+Custo Comida R$: 0.5
+Leite L: 9.0
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 10012023
+Comida Kg: 12.8
+Custo Comida R$: 0.5
+Leite L: 7.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 11012023
+Comida Kg: 14.6
+Custo Comida R$: 0.5
+Leite L: 8.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 12012023
+Comida Kg: 11.2
+Custo Comida R$: 0.5
+Leite L: 6.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 13012023
+Comida Kg: 16.4
+Custo Comida R$: 0.5
+Leite L: 7.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 14012023
+Comida Kg: 13.9
+Custo Comida R$: 0.5
+Leite L: 8.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 15012023
+Comida Kg: 12.5
+Custo Comida R$: 0.5
+Leite L: 9.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 16012023
+Comida Kg: 15.8
+Custo Comida R$: 0.5
+Leite L: 7.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 17012023
+Comida Kg: 14.3
+Custo Comida R$: 0.5
+Leite L: 6.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 18012023
+Comida Kg: 10.9
+Custo Comida R$: 0.5
+Leite L: 8.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 19012023
+Comida Kg: 13.7
+Custo Comida R$: 0.5
+Leite L: 7.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 20012023
+Comida Kg: 16.2
+Custo Comida R$: 0.5
+Leite L: 6.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 21012023
+Comida Kg: 12.4
+Custo Comida R$: 0.5
+Leite L: 8.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 22012023
+Comida Kg: 14.9
+Custo Comida R$: 0.5
+Leite L: 9.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 23012023
+Comida Kg: 11.6
+Custo Comida R$: 0.5
+Leite L: 7.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 24012023
+Comida Kg: 15.3
+Custo Comida R$: 0.5
+Leite L: 6.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 25012023
+Comida Kg: 13.0
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 26012023
+Comida Kg: 17.1
+Custo Comida R$: 0.5
+Leite L: 7.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 27012023
+Comida Kg: 14.7
+Custo Comida R$: 0.5
+Leite L: 6.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 28012023
+Comida Kg: 11.3
+Custo Comida R$: 0.5
+Leite L: 9.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 29012023
+Comida Kg: 16.6
+Custo Comida R$: 0.5
+Leite L: 8.6
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 30012023
+Comida Kg: 13.8
+Custo Comida R$: 0.5
+Leite L: 7.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 31012023
+Comida Kg: 12.1
+Custo Comida R$: 0.5
+Leite L: 6.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 01022023
+Comida Kg: 14.2
+Custo Comida R$: 0.5
+Leite L: 8.0
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 02022023
+Comida Kg: 11.8
+Custo Comida R$: 0.5
+Leite L: 7.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 03022023
+Comida Kg: 13.5
+Custo Comida R$: 0.5
+Leite L: 6.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 04022023
+Comida Kg: 16.1
+Custo Comida R$: 0.5
+Leite L: 9.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 05022023
+Comida Kg: 12.4
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 06022023
+Comida Kg: 15.7
+Custo Comida R$: 0.5
+Leite L: 7.6
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 07022023
+Comida Kg: 14.3
+Custo Comida R$: 0.5
+Leite L: 6.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 08022023
+Comida Kg: 17.9
+Custo Comida R$: 0.5
+Leite L: 8.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 09022023
+Comida Kg: 13.6
+Custo Comida R$: 0.5
+Leite L: 9.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 10022023
+Comida Kg: 12.1
+Custo Comida R$: 0.5
+Leite L: 7.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 11022023
+Comida Kg: 14.9
+Custo Comida R$: 0.5
+Leite L: 8.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 12022023
+Comida Kg: 11.5
+Custo Comida R$: 0.5
+Leite L: 6.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 13022023
+Comida Kg: 15.3
+Custo Comida R$: 0.5
+Leite L: 7.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 14022023
+Comida Kg: 13.0
+Custo Comida R$: 0.5
+Leite L: 8.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 15022023
+Comida Kg: 12.7
+Custo Comida R$: 0.5
+Leite L: 7.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 16022023
+Comida Kg: 16.5
+Custo Comida R$: 0.5
+Leite L: 9.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 17022023
+Comida Kg: 14.8
+Custo Comida R$: 0.5
+Leite L: 6.6
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 18022023
+Comida Kg: 11.2
+Custo Comida R$: 0.5
+Leite L: 8.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 19022023
+Comida Kg: 15.6
+Custo Comida R$: 0.5
+Leite L: 7.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 20022023
+Comida Kg: 13.4
+Custo Comida R$: 0.5
+Leite L: 6.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 21022023
+Comida Kg: 17.2
+Custo Comida R$: 0.5
+Leite L: 8.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 22022023
+Comida Kg: 14.9
+Custo Comida R$: 0.5
+Leite L: 7.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 23022023
+Comida Kg: 12.6
+Custo Comida R$: 0.5
+Leite L: 9.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 24022023
+Comida Kg: 16.3
+Custo Comida R$: 0.5
+Leite L: 6.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 25022023
+Comida Kg: 13.8
+Custo Comida R$: 0.5
+Leite L: 8.0
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 26022023
+Comida Kg: 11.4
+Custo Comida R$: 0.5
+Leite L: 7.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 27022023
+Comida Kg: 15.1
+Custo Comida R$: 0.5
+Leite L: 8.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 28022023
+Comida Kg: 14.2
+Custo Comida R$: 0.5
+Leite L: 6.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 29022023
+Comida Kg: 12.7
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 01032023
+Comida Kg: 16.4
+Custo Comida R$: 0.5
+Leite L: 9.0
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 02032023
+Comida Kg: 13.8
+Custo Comida R$: 0.5
+Leite L: 8.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 03032023
+Comida Kg: 12.7
+Custo Comida R$: 0.5
+Leite L: 7.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 04032023
+Comida Kg: 15.6
+Custo Comida R$: 0.5
+Leite L: 6.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 05032023
+Comida Kg: 14.3
+Custo Comida R$: 0.5
+Leite L: 8.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 06032023
+Comida Kg: 11.9
+Custo Comida R$: 0.5
+Leite L: 7.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 07032023
+Comida Kg: 13.5
+Custo Comida R$: 0.5
+Leite L: 6.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 08032023
+Comida Kg: 16.1
+Custo Comida R$: 0.5
+Leite L: 8.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 09032023
+Comida Kg: 12.4
+Custo Comida R$: 0.5
+Leite L: 9.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 10032023
+Comida Kg: 14.7
+Custo Comida R$: 0.5
+Leite L: 6.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 11032023
+Comida Kg: 11.2
+Custo Comida R$: 0.5
+Leite L: 8.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 12032023
+Comida Kg: 15.3
+Custo Comida R$: 0.5
+Leite L: 7.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 13032023
+Comida Kg: 13.0
+Custo Comida R$: 0.5
+Leite L: 6.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 14032023
+Comida Kg: 16.9
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 15032023
+Comida Kg: 14.5
+Custo Comida R$: 0.5
+Leite L: 7.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 16032023
+Comida Kg: 11.8
+Custo Comida R$: 0.5
+Leite L: 9.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 17032023
+Comida Kg: 13.6
+Custo Comida R$: 0.5
+Leite L: 7.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 18032023
+Comida Kg: 15.7
+Custo Comida R$: 0.5
+Leite L: 6.2
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 19032023
+Comida Kg: 12.1
+Custo Comida R$: 0.5
+Leite L: 8.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 20032023
+Comida Kg: 14.8
+Custo Comida R$: 0.5
+Leite L: 7.6
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 21032023
+Comida Kg: 11.5
+Custo Comida R$: 0.5
+Leite L: 8.9
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 22032023
+Comida Kg: 16.2
+Custo Comida R$: 0.5
+Leite L: 7.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 23032023
+Comida Kg: 12.9
+Custo Comida R$: 0.5
+Leite L: 6.7
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 24032023
+Comida Kg: 14.3
+Custo Comida R$: 0.5
+Leite L: 9.4
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 25032023
+Comida Kg: 10.8
+Custo Comida R$: 0.5
+Leite L: 8.3
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 26032023
+Comida Kg: 13.4
+Custo Comida R$: 0.5
+Leite L: 7.0
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 27032023
+Comida Kg: 15.9
+Custo Comida R$: 0.5
+Leite L: 9.6
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 28032023
+Comida Kg: 14.2
+Custo Comida R$: 0.5
+Leite L: 6.8
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 29032023
+Comida Kg: 12.7
+Custo Comida R$: 0.5
+Leite L: 8.1
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 30032023
+Comida Kg: 16.5
+Custo Comida R$: 0.5
+Leite L: 7.5
+Venda do Leite R$: 2.69
+
+Código: 5554
+Data: 31032023
+Comida Kg: 13.2
+Custo Comida R$: 0.5
+Leite L: 8.6
 Venda do Leite R$: 2.69

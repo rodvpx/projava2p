@@ -4,105 +4,64 @@ import javax.swing.JOptionPane;
 
 public class Estatisticas {
 
+    // Método para exibir os cadastros de todas as vacas
     public static void verCadastros() {
         StringBuilder mensagem = new StringBuilder();
         mensagem.append("Codigo | Nome | Raça | Variação\n");
 
+        // Itera sobre as vacas cadastradas
         for (int i = 0; i < VarShare.id - 1; i++) {
+            // Adiciona informações da vaca à mensagem
             mensagem.append(VarShare.cod[i] + " | " + VarShare.nome[i] + " | "
                     + VarShare.raca[i] + " | " + VarShare.variacao[i] + "\n");
         }
 
+        // Exibe os cadastros em uma caixa de diálogo
         JOptionPane.showMessageDialog(null, mensagem.toString());
     }
 
+    // Método para gerar relatórios diários de lançamentos
     public static void lancamentoDiario() {
-
+        // Inicialização de variáveis e solicitação da data ao usuário
+        StringBuilder mensagemVaca = new StringBuilder();
         StringBuilder mensagem = new StringBuilder();
-
         double quantComida = 0, custoComida = 0, leite = 0, valorVenda = 0;
 
+        // Solicitação da data ao usuário
         int data = Integer.parseInt(JOptionPane.showInputDialog("Informe a data (dd/mm/yyyy):"));
 
+        mensagem.append("- Relatórios para" + formatarData(data) + "\n");
+
+        // Obtém partes do dia, mês e ano da data
         int dataDia = data % 100;
         int dataMes = (data % 10000) / 100;
         int dataAno = data / 10000;
 
-        mensagem.append(
-                "| Codigo | Nome | Raça | Variação |\n");
+        mensagemVaca.append(
+                " | Data | Codigo | Nome | Raça | Variação | Comida Kg | Custo Comida R$ | Leite L | Venda do Leite R$ |\n");
 
+        // Itera sobre as vacas cadastradas
         for (int i = 0; i < VarShare.id - 1; i++) {
-            mensagem.append(" | " + VarShare.cod[i] + " | ")
-                    .append(VarShare.nome[i] + " | ").append(VarShare.raca[i] + " | ")
-                    .append(VarShare.variacao[i] + "\n");
-            mensagem.append("      Data | Comida Kg | Custo Comida R$ | Leite L | Venda do Leite R$ |\n");
+            StringBuilder mensagemLancs = new StringBuilder();
 
+            // Itera sobre os lançamentos da vaca
             for (int j = 0; j < VarShare.numL[i]; j++) {
-
                 int lancamentoDia = VarShare.lancamento[i].data[j] % 100;
                 int lancamentoMes = (VarShare.lancamento[i].data[j] % 10000) / 100;
                 int lancamentoAno = VarShare.lancamento[i].data[j] / 10000;
 
+                // Verifica se o lançamento é na data informada
                 if (lancamentoDia == dataDia && lancamentoMes == dataMes && lancamentoAno == dataAno) {
-                    mensagem.append("      ");
-                    mensagem.append(formatarData(VarShare.lancamento[i].data[j]) + " | ")
-                            .append(VarShare.lancamento[i].comidakg[j] + " Kg | R$ ")
-                            .append(VarShare.lancamento[i].custoComida + " | ")
-                            .append(VarShare.lancamento[i].leite[j] + " L | R$ ")
-                            .append(VarShare.lancamento[i].valorVenda + "\n");
+                    // Adiciona informações do lançamento à mensagem
+                    mensagemVaca.append(String.format(" | %s | %s | %s | %s | %s | %s Kg | R$ %s | %s L | R$ %s |\n",
+                            formatarData(VarShare.lancamento[i].data[j]),
+                            VarShare.cod[i], VarShare.nome[i], VarShare.raca[i], VarShare.variacao[i],
+                            formatarCasaDecimal(VarShare.lancamento[i].comidakg[j]),
+                            formatarCasaDecimal(VarShare.lancamento[i].custoComida),
+                            formatarCasaDecimal(VarShare.lancamento[i].leite[j]),
+                            formatarCasaDecimal(VarShare.lancamento[i].valorVenda)));
 
-                    quantComida += VarShare.lancamento[i].comidakg[j];
-                    custoComida = VarShare.lancamento[i].custoComida;
-                    leite += VarShare.lancamento[i].leite[j];
-                    valorVenda = VarShare.lancamento[i].valorVenda;
-                } else
-                    mensagem.append("");
-            }
-        }
-
-        double custo = quantComida * custoComida;
-        double venda = leite * valorVenda;
-        double balanco = venda - custo;
-
-        mensagem.append(
-                "\n Qt Comida Total | Valor Custo | Custo Comida Total | Produção de Leite Total | Valor Venda Leite | Balanço\n")
-                .append((quantComida) + " Kg | R$ ").append((custoComida) + " | R$ ").append((custo) + " | ")
-                .append((leite) + " L | R$ ").append((valorVenda) + "  | R$ ").append((balanco) + " | ");
-
-        JOptionPane.showMessageDialog(null, mensagem.toString());
-
-    }
-
-    public static void lancamentoMensal() {
-        StringBuilder mensagemVaca = new StringBuilder();
-        StringBuilder mensagem = new StringBuilder();
-
-
-        double quantComida = 0, custoComida = 0, leite = 0, valorVenda = 0;
-
-        int data = Integer.parseInt(JOptionPane.showInputDialog("Informe a data (mm/yyyy):"));
-        int dataMes = data / 10000;
-        int dataAno = data % 10000;
-
-        for (int i = 0; i < VarShare.id - 1; i++) {
-            StringBuilder mensagemLancs = new StringBuilder();
-            for (int j = 0; j < VarShare.numL[i]; j++) {
-                int semDia = VarShare.lancamento[i].data[j] % 1000000;
-                int lancamentoMes = semDia / 10000;
-                int lancamentoAno = semDia % 10000;
-
-                if (lancamentoMes == dataMes && lancamentoAno == dataAno) {
-
-                    mensagemLancs.append(formatarData(VarShare.lancamento[i].data[j]) + " | ");
-
-                mensagemLancs.append(" | " + VarShare.cod[i] + " | ")
-                    .append(VarShare.nome[i] + " | ").append(VarShare.raca[i] + " | ")
-                    .append(VarShare.variacao[i])
-                            .append(VarShare.lancamento[i].comidakg[j] + " Kg | R$ ")
-                            .append(VarShare.lancamento[i].custoComida + " | ")
-                            .append(VarShare.lancamento[i].leite[j] + " L | R$ ")
-                            .append(VarShare.lancamento[i].valorVenda + "\n");
-
+                    // Atualiza totais
                     quantComida += VarShare.lancamento[i].comidakg[j];
                     custoComida = VarShare.lancamento[i].custoComida;
                     leite += VarShare.lancamento[i].leite[j];
@@ -110,75 +69,200 @@ public class Estatisticas {
                 }
             }
 
+            // Se houver lançamentos, adiciona à mensagem
             if (!mensagemLancs.toString().equals("")) {
-                mensagemVaca.append(" Data | Codigo | Nome | Raça | Variação |");
+                mensagemVaca
+                        .append(String.format(" |      Data     | Codigo |    Nome    |      Raça      | Variação |"));
                 mensagemVaca.append(" Comida Kg | Custo Comida R$ | Leite L | Venda do Leite R$ |\n");
-                
                 mensagemVaca.append(mensagemLancs + "\n");
             }
         }
 
-
+        // Calcula custo, venda e balanço
         double custo = quantComida * custoComida;
         double venda = leite * valorVenda;
         double balanco = venda - custo;
 
+        // Se não houver lançamentos, informa ao usuário
         if (mensagemVaca.toString().equals("")) {
             mensagem.append("Nenhum lançamento encontrado para o mês informado.\n");
-        }else{
-        mensagem.append(
-                "\n Qt Comida Total | Valor Custo | Custo Comida Total | Produção de Leite Total | Valor Venda Leite | Balanço\n")
-                .append((quantComida) + " Kg | R$ ").append((custoComida) + " | R$ ").append((custo) + " | ")
-                .append((leite) + " L | R$ ").append((valorVenda) + "  | R$ ").append((balanco) + " | ");
-        mensagem.append("\n" + mensagemVaca);
+        } else {
+            // Adiciona informações totais à mensagem
+            mensagem.append(
+                    "\n | Comida Total | Custo Comida Total | Produção de Leite Total | Venda Total de Leite | Balanço\n")
+                    .append(" |    " + formatarCasaDecimal(quantComida) + " Kg    |    R$ ")
+                    .append(formatarCasaDecimal(custo) + "    |   ")
+                    .append(formatarCasaDecimal(leite) + " L    | R$   ")
+                    .append(formatarCasaDecimal(venda) + "     | R$   ")
+                    .append(formatarCasaDecimal(balanco) + "   |   ");
+            mensagem.append("\n\n" + mensagemVaca);
         }
 
+        // Exibe a mensagem final em uma caixa de diálogo
         JOptionPane.showMessageDialog(null, mensagem.toString());
     }
 
-    public static void lancamentoAnual() {
+    // Método para gerar relatórios mensais de lançamentos
+    public static void lancamentoMensal() {
+        // Inicialização de variáveis e solicitação da data ao usuário
+        StringBuilder mensagemVaca = new StringBuilder();
         StringBuilder mensagem = new StringBuilder();
+        double quantComida = 0, custoComida = 0, leite = 0, valorVenda = 0;
 
-        int ano = Integer.parseInt(JOptionPane.showInputDialog("Informe o ano (yyyy):"));
+        // Solicitação da data ao usuário no formato mm/yyyy
+        int data = Integer.parseInt(JOptionPane.showInputDialog("Informe a data (mm/yyyy):"));
 
-        mensagem.append("| Codigo | Nome | Raça | Variação |\n");
+        // Obtém partes do mês e ano da data
+        int dataMes = data / 10000;
+        int dataAno = data % 10000;
 
-        boolean encontrouLancamentos = false;
+        // Adiciona cabeçalho à mensagem com a informação do mês e ano
+        mensagem.append(" - Relatórios para " + dataMes + "/" + dataAno + "\n");
 
-        for (int i = 0; i < VarShare.id; i++) {
-            mensagem.append(" | " + VarShare.cod[i] + " | ")
-                    .append(VarShare.nome[i] + " | ").append(VarShare.raca[i] + " | ")
-                    .append(VarShare.variacao[i] + "\n");
-
-            mensagem.append("      Data | Comida Kg | Custo Comida R$ | Leite L | Venda do Leite R$ |\n");
-
-            boolean encontrouLancamentosIndividuais = false;
-
+        // Itera sobre as vacas cadastradas
+        for (int i = 0; i < VarShare.id - 1; i++) {
+            StringBuilder mensagemLancs = new StringBuilder();
+            // Itera sobre os lançamentos da vaca
             for (int j = 0; j < VarShare.numL[i]; j++) {
-                int lancamentoAno = VarShare.lancamento[i].data[j] % 10000;
+                // Extrai o mês e ano do lançamento
+                int semDia = VarShare.lancamento[i].data[j] % 1000000;
+                int lancamentoMes = semDia / 10000;
+                int lancamentoAno = semDia % 10000;
 
-                if (lancamentoAno == ano) {
-                    encontrouLancamentos = true;
-                    encontrouLancamentosIndividuais = true;
+                // Verifica se o lançamento é no mês e ano informados
+                if (lancamentoMes == dataMes && lancamentoAno == dataAno) {
+                    // Adiciona informações do lançamento à mensagem
+                    mensagemLancs.append(String.format(" | %s | %s | %s | %s | %s | %s Kg | R$ %s | %s L | R$ %s |\n",
+                            formatarData(VarShare.lancamento[i].data[j]),
+                            VarShare.cod[i], VarShare.nome[i], VarShare.raca[i], VarShare.variacao[i],
+                            formatarCasaDecimal(VarShare.lancamento[i].comidakg[j]),
+                            formatarCasaDecimal(VarShare.lancamento[i].custoComida),
+                            formatarCasaDecimal(VarShare.lancamento[i].leite[j]),
+                            formatarCasaDecimal(VarShare.lancamento[i].valorVenda)));
 
-                    mensagem.append("      ");
-                    mensagem.append(formatarData(VarShare.lancamento[i].data[j]) + " | ")
-                            .append(VarShare.lancamento[i].comidakg[j] + " Kg | R$ ")
-                            .append(VarShare.lancamento[i].custoComida + " | ")
-                            .append(VarShare.lancamento[i].leite[j] + " L | R$ ")
-                            .append(VarShare.lancamento[i].valorVenda + "\n");
+                    // Atualiza totais
+                    quantComida += VarShare.lancamento[i].comidakg[j];
+                    custoComida = VarShare.lancamento[i].custoComida;
+                    leite += VarShare.lancamento[i].leite[j];
+                    valorVenda = VarShare.lancamento[i].valorVenda;
                 }
             }
 
-            if (encontrouLancamentosIndividuais) {
-                mensagem.append("\n");
+            // Se houver lançamentos, adiciona à mensagem
+            if (!mensagemLancs.toString().equals("")) {
+                mensagemVaca
+                        .append(String.format(" |      Data     | Codigo |    Nome    |      Raça      | Variação |"));
+                mensagemVaca.append(" Comida Kg | Custo Comida R$ | Leite L | Venda do Leite R$ |\n");
+                mensagemVaca.append(mensagemLancs + "\n");
             }
         }
 
-        if (!encontrouLancamentos) {
-            mensagem.append("Nenhum lançamento encontrado para o ano informado.\n");
+        // Calcula custo, venda e balanço
+        double custo = quantComida * custoComida;
+        double venda = leite * valorVenda;
+        double balanco = venda - custo;
+
+        // Se não houver lançamentos, informa ao usuário
+        if (mensagemVaca.toString().equals("")) {
+            mensagem.append("Nenhum lançamento encontrado para o mês informado.\n");
+        } else {
+            // Adiciona informações totais à mensagem
+            mensagem.append(
+                    "\n | Comida Total | Custo Comida Total | Produção de Leite Total | Venda Total de Leite | Balanço\n")
+                    .append(" |    " + formatarCasaDecimal(quantComida) + " Kg    |    R$ ")
+                    .append(formatarCasaDecimal(custo) + "    |   ")
+                    .append(formatarCasaDecimal(leite) + "    L | R$   ")
+                    .append(formatarCasaDecimal(venda) + "    L | R$   ")
+                    .append(formatarCasaDecimal(balanco) + "   |   ");
+            mensagem.append("\n\n" + mensagemVaca);
         }
 
+        // Exibe a mensagem final em uma caixa de diálogo
+        JOptionPane.showMessageDialog(null, mensagem.toString());
+    }
+
+    // Método para gerar relatórios anuais de lançamentos
+    public static void lancamentoAnual() {
+        // Inicialização de variáveis e solicitação da data ao usuário
+        StringBuilder mensagemVaca = new StringBuilder();
+        StringBuilder mensagem = new StringBuilder();
+        double totalQuantComida = 0, totalCustoComida = 0, totalLeite = 0, totalValorVenda = 0;
+
+        // Solicitação da data ao usuário no formato yyyy
+        int ano = Integer.parseInt(JOptionPane.showInputDialog("Informe a data (yyyy):"));
+
+        // Adiciona cabeçalho à mensagem com a informação do ano
+        mensagem.append(String.format("- Relatórios para o ano de %d:\n", ano));
+
+        // Flag para verificar se houve lançamentos
+        boolean encontrouLancamentos = false;
+
+        // Adiciona cabeçalho da tabela de lançamentos à mensagem
+        mensagemVaca.append(
+                " | Data | Codigo | Nome | Raça | Variação | Comida Kg | Custo Comida R$ | Leite L | Venda do Leite R$ |\n");
+
+        // Itera sobre as vacas cadastradas
+        for (int i = 0; i < VarShare.id - 1; i++) {
+            double quantComidaVaca = 0, custoComidaVaca = 0, leiteVaca = 0, valorVendaVaca = 0;
+
+            // Flag para verificar se houve lançamentos individuais para a vaca
+            boolean encontrouLancamentosIndividuais = false;
+
+            // Itera sobre os lançamentos da vaca
+            for (int j = 0; j < VarShare.numL[i]; j++) {
+                // Extrai o ano do lançamento
+                int lancamentoAno = VarShare.lancamento[i].data[j] % 10000;
+
+                // Verifica se o lançamento é no ano informado
+                if (lancamentoAno == ano) {
+                    // Atualiza flags e totais
+                    encontrouLancamentos = true;
+                    encontrouLancamentosIndividuais = true;
+
+                    quantComidaVaca += VarShare.lancamento[i].comidakg[j];
+                    custoComidaVaca += VarShare.lancamento[i].custoComida;
+                    leiteVaca += VarShare.lancamento[i].leite[j];
+                    valorVendaVaca += VarShare.lancamento[i].valorVenda;
+                }
+            }
+
+            // Se houver lançamentos individuais, adiciona à mensagem
+            if (encontrouLancamentosIndividuais) {
+                mensagemVaca.append(String.format(" | %s | %s | %s | %s | %s | %s Kg | R$ %s | %s L | R$ %s |\n",
+                        formatarData(VarShare.lancamento[i].data[0]),
+                        VarShare.cod[i], VarShare.nome[i], VarShare.raca[i], VarShare.variacao[i],
+                        formatarCasaDecimal(quantComidaVaca), formatarCasaDecimal(custoComidaVaca),
+                        formatarCasaDecimal(leiteVaca), formatarCasaDecimal(valorVendaVaca)));
+
+                // Atualiza totais gerais
+                totalQuantComida += quantComidaVaca;
+                totalCustoComida = VarShare.lancamento[i].custoComida;
+                totalLeite += leiteVaca;
+                totalValorVenda = VarShare.lancamento[i].valorVenda;
+            }
+        }
+
+        // Se não houver lançamentos, informa ao usuário
+        if (!encontrouLancamentos || mensagemVaca.toString().equals("")) {
+            mensagem.append("Nenhum lançamento encontrado para o ano informado.\n");
+        } else {
+            // Calcula custo, venda e balanço gerais
+            double totalCusto = totalQuantComida * totalCustoComida;
+            double totalVenda = totalLeite * totalValorVenda;
+            double totalBalanço = totalVenda - totalCusto;
+
+            // Adiciona informações totais à mensagem
+            mensagem.append(
+                    "\n | Comida Total | Custo Comida Total | Produção de Leite Total | Venda Total de Leite | Balanço\n")
+                    .append(" |    " + formatarCasaDecimal(totalQuantComida) + " Kg    |    R$ ")
+                    .append(formatarCasaDecimal(totalCusto) + "    |   ")
+                    .append(formatarCasaDecimal(totalLeite) + "    L | R$   ")
+                    .append(formatarCasaDecimal(totalVenda) + "    L | R$   ")
+                    .append(formatarCasaDecimal(totalBalanço) + "   |   ");
+            mensagem.append("\n\n" + mensagemVaca);
+        }
+
+        // Exibe a mensagem final em uma caixa de diálogo
         JOptionPane.showMessageDialog(null, mensagem.toString());
     }
 
@@ -187,5 +271,9 @@ public class Estatisticas {
         int mes = (data / 10000) % 100;
         int ano = data % 10000;
         return String.format("%02d/%02d/%04d", dia, mes, ano);
+    }
+
+    public static String formatarCasaDecimal(double valor) {
+        return String.format("%.2f", valor);
     }
 }
